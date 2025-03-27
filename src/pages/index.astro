@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+type Category = {
+  category: string;
+};
+
+const response = await fetch("https://kea-alt-del.dk/t7/api/categories");
+const categories: Category[] = await response.json();
 ---
 
 <Layout>
-	<Welcome />
+  <header>
+    <a href="/">
+      <h1>Fashion R Us</h1>
+    </a>
+  </header>
+  <main id="indexMain">
+    <h1 class="overview">Categories</h1>
+    <section class="category">
+      {
+        categories.map((category: Category) => (
+          <a href={`/productlist?category=${category.category}`} class="box">
+            {category.category}
+          </a>
+        ))
+      }
+    </section>
+  </main>
 </Layout>

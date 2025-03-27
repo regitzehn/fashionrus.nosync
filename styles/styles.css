@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#indexMain {
+  margin-top: 6rem;
+}
+
+main {
+  padding: 50px;
+  margin: 10px;
+}
+
+header {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+header,
+h1,
+h2,
+p,
+.product-text h3 {
+  font-family: "Lexend Giga", serif;
+}
+
+.overview {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.product_name,
+h2 {
+  text-align: center;
+}
+
+p {
+  max-width: 65ch;
+  margin-top: 50px;
+}
+
+li,
+tbody {
+  font-family: "Lexend Giga", serif;
+  font-size: 14px;
+}
+
+.box {
+  background-color: rgb(46, 38, 42);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.box:hover {
+  background-color: rgb(164, 134, 188);
+}
+
+/* grids and stuff */
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.category a {
+  font-size: 25px;
+  font-family: "Bebas Neue", serif;
+  color: rgb(254, 250, 244);
+  text-align: center;
+  line-height: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 18px;
+}
+
+.grid_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  border: 0.4px solid black;
+}
+
+.item img {
+  display: block;
+  width: 100%;
+}
+.product-text {
+  text-align: center;
+  margin-top: 10px;
+  border: 0.4px solid black;
+}
+
+.product-text h3,
+.product-text p {
+  margin: auto;
+}
+
+/* on sale og sold out */
+
+.grid_items div.soldOut img {
+  opacity: 0.3;
+}
+
+.item.soldOut img {
+  opacity: 0.3;
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Lexend Giga", serif;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.sale-label,
+.soldout-label {
+  background-color: rgb(164, 134, 188);
+}
+
+/* media */
+
+@media screen and (max-width: 700px) {
+  header {
+    font-size: 20px;
+  }
+
+  .category {
+    grid-template-columns: 1fr;
+  }
+
+  .grid_items {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

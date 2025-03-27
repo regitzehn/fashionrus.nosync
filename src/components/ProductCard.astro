@@ -1,0 +1,15 @@
+---
+const { product } = Astro.props;
+---
+
+<div class="sub">
+  <div class="item">
+    <a href={`/produkt?id=${product.id}`}>
+      <img src={`https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`} alt={product.productdisplayname} />
+    </a>
+  </div>
+  <div class="product-text">
+    <h3>{product.productdisplayname}</h3>
+    <p>{product.price} DKK</p>
+  </div>
+</div>
