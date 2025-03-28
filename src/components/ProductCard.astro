@@ -11,5 +11,17 @@ const { product } = Astro.props;
   <div class="product-text">
     <h3>{product.productdisplayname}</h3>
     <p>{product.price} DKK</p>
+    <a href=`/product/${product.id}`>læs mere her</a>
+    {product.discount !== null ? <p class="label sale-label">-55%</p> : ""}
+    {product.soldout == 1 && <p class="label soldout-label">Udsolgt</p>}
   </div>
 </div>
+
+<style>
+  .sale-label {
+    background-color: rgb(96, 87, 104);
+  }
+  .soldout-label {
+    background-color: rgb(253, 120, 120);
+  }
+</style>

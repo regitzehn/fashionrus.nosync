@@ -4,14 +4,17 @@ import "../styles/styles.css";
 import Layout from "../layouts/Layout.astro";
 import ProductCard from ".././components/ProductCard.astro";
 
-const fashionUrl = "https://kea-alt-del.dk/t7/api/products?start=39600&limit=30";
+const fashionUrl = "https://kea-alt-del.dk/t7/api/products?start=39606&limit=24";
 const data = await fetch(fashionUrl).then((res) => res.json());
 console.log(data);
 ---
 
 <Layout>
-  <h1>Produkter</h1>
-  <p>Håndtasker for enhver smag</p>
+  <header>
+    <a href="index.html">
+      <h1>Fashion R Us</h1>
+    </a>
+  </header>
   <main class="grid_items">
     {data.map((product) => <ProductCard product={product} />)}
   </main>
